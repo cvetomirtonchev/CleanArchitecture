@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/fragment_characters">
+
+    <fragment
+        android:id="@+id/fragment_characters"
+        android:name="com.tsvetomir.tonchev.breakingbad.ui.characters.CharactersFragment"
+        android:label="Characters"
+        tools:layout="@layout/fragment_characters">
+
+        <action
+            android:id="@+id/action_characters_to_character_details"
+            app:destination="@id/fragment_character_details"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_character_details"
+        android:name="com.tsvetomir.tonchev.breakingbad.ui.characters.characterdetails.CharacterDetailsFragment"
+        android:label="Character Details"
+        tools:layout="@layout/fragment_character_details">
+
+        <argument
+            android:name="character_view"
+            app:argType="com.tsvetomir.tonchev.breakingbad.data.models.local.CharacterView"
+            app:nullable="false" />
+    </fragment>
+
+</navigation>
